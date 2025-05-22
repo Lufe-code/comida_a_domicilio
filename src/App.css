@@ -1,0 +1,455 @@
+/* Reset some defaults */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #fff8f0;
+  min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo .navbar-brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #d35400;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navbar-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+}
+
+.navbar-link:hover {
+  background: #ffe5d0;
+  color: #d35400;
+}
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: 1rem;
+}
+
+.header-user-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d35400;
+}
+
+.header-user-info span {
+  font-weight: 500;
+  color: #d35400;
+}
+
+.header-user-info button {
+  background: #d35400;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.header-user-info button:hover {
+  background: #b34700;
+}
+
+/* Main page styles */
+.main-page {
+  max-width: 900px;
+  margin: 2.5rem auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(211,84,0,0.07);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+}
+
+.main-page h1 {
+  color: #d35400;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.main-page p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.food-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.food-photo {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(211,84,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid #fff3e0;
+  background: #fff3e0;
+}
+
+.food-photo:hover {
+  transform: scale(1.04) rotate(-2deg);
+  box-shadow: 0 6px 24px rgba(211,84,0,0.15);
+  border-color: #ffd6b0;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  .main-page {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7rem 1rem;
+    gap: 0.7rem;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+  .main-page h1 {
+    font-size: 1.4rem;
+  }
+  .food-photo {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-page {
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+  .food-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .navbar-logo .navbar-brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* ...existing code... */
+
+/* Table and form styles for restaurant admin look */
+.customer-table-container,
+.address-table-container,
+.product-table-container {
+  max-width: 950px;
+  margin: 2.5rem auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(211,84,0,0.07);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+}
+
+.customer-table-container h1,
+.address-table-container h1,
+.product-table-container h1 {
+  color: #d35400;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.customer-table-container button,
+.address-table-container button,
+.product-table-container button {
+  background: #d35400;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.customer-table-container button:hover,
+.address-table-container button:hover,
+.product-table-container button:hover {
+  background: #b34700;
+}
+
+.customer-table-container table,
+.address-table-container table,
+.product-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.customer-table-container th,
+.address-table-container th,
+.product-table-container th {
+  background: #ffe5d0;
+  color: #d35400;
+  padding: 0.7rem 0.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ffd6b0;
+  text-align: left;
+}
+
+.customer-table-container td,
+.address-table-container td,
+.product-table-container td {
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #f5e1d6;
+}
+
+.customer-table-container tr:last-child td,
+.address-table-container tr:last-child td,
+.product-table-container tr:last-child td {
+  border-bottom: none;
+}
+
+.customer-table-container tr:hover,
+.address-table-container tr:hover,
+.product-table-container tr:hover {
+  background: #fff8f0;
+}
+
+.customer-table-container table button,
+.address-table-container table button,
+.product-table-container table button {
+  background: #fff3e0;
+  color: #d35400;
+  border: 1px solid #ffd6b0;
+  border-radius: 4px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.95rem;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.customer-table-container table button:hover,
+.address-table-container table button:hover,
+.product-table-container table button:hover {
+  background: #ffd6b0;
+  color: #b34700;
+}
+
+.customer-table-container table button[style*="color: red"],
+.address-table-container table button[style*="color: red"],
+.product-table-container table button[style*="color: red"] {
+  background: #ffeaea;
+  color: #c0392b;
+  border: 1px solid #f5b7b1;
+}
+
+.customer-table-container table button[style*="color: red"]:hover,
+.address-table-container table button[style*="color: red"]:hover,
+.product-table-container table button[style*="color: red"]:hover {
+  background: #f5b7b1;
+  color: #fff;
+}
+
+/* Modal form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form input,
+form select {
+  border: 1px solid #ffd6b0;
+  border-radius: 5px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  background: #fff8f0;
+  margin-bottom: 0.5rem;
+  transition: border 0.2s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #d35400;
+  outline: none;
+}
+
+form label {
+  font-size: 1rem;
+  color: #d35400;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form button[type="submit"] {
+  background: #d35400;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background: #b34700;
+}
+
+/* Responsive tables and forms */
+@media (max-width: 700px) {
+  .customer-table-container,
+  .address-table-container,
+  .product-table-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin-top: 1.2rem;
+    border-radius: 8px;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(211,84,0,0.07);
+    background: #fff;
+    padding: 0.7rem 0.5rem;
+  }
+  td {
+    padding: 0.5rem 0.3rem;
+    border: none;
+    position: relative;
+  }
+  td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #d35400;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.97rem;
+  }
+}
+
+.order-map-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.10);
+  background: #fff;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 320px !important;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .order-map-container {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  .leaflet-container {
+    height: 220px !important;
+    border-radius: 8px;
+  }
+}
+
+/* Button for switching address mode */
+.address-switch-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.address-switch-btn:hover {
+  background: #125ea2;
+}
+
+/* Añadir a App.css */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Soporte para tema oscuro */
+body.dark-theme {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-theme .app-container {
+  background-color: #1e1e1e;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+}
