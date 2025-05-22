@@ -1,7 +1,7 @@
 import axios from "axios";
 import { RestaurantData, RestaurantResponse } from "../types/Restaurant.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/restaurants";
 
 export const getRestaurants = async (): Promise<RestaurantResponse[]> => {
   const res = await axios.get<RestaurantResponse[]>(`${API_URL}/restaurants`);

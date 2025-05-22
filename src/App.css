@@ -5,6 +5,7 @@ body, html {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   background: #fff8f0;
   min-height: 100vh;
+  color:#121212
 }
 
 /* Navbar styles */
@@ -441,7 +442,7 @@ form button[type="submit"]:hover {
 /* Soporte para tema oscuro */
 body.dark-theme {
   background-color: #121212;
-  color: #f5f5f5;
+  color: #000000;
 }
 
 body.dark-theme .app-container {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ProductData, ProductResponse } from "../types/Product.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/products";
 
 export const getProducts = async (): Promise<ProductResponse[]> => {
   const res = await axios.get<ProductResponse[]>(`${API_URL}/products`);

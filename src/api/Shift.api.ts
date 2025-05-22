@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ShiftData, ShiftResponse } from "../types/Shift.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/shifts";
 
 export const getShifts = async (): Promise<ShiftResponse[]> => {
   const res = await axios.get<ShiftResponse[]>(`${API_URL}/shifts`);

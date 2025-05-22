@@ -1,7 +1,7 @@
 import axios from "axios";
 import { MenuData, MenuResponse } from "../types/Menu.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/menus";
 
 const token = localStorage.getItem("google_token");
 fetch("/api/endpoint", {

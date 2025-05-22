@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IssueData, IssueResponse } from "../types/Issue.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/issues";
 
 export const getIssues = async (): Promise<IssueResponse[]> => {
   const res = await axios.get<IssueResponse[]>(`${API_URL}/issues`);

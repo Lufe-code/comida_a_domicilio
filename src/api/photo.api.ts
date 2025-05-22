@@ -1,7 +1,7 @@
 import axios from "axios";
 import { PhotoData, PhotoResponse } from "../types/photo.types";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/photos";
 
 export const getPhotos = async (): Promise<PhotoResponse[]> => {
   const res = await axios.get<PhotoResponse[]>(`${API_URL}/photos`);

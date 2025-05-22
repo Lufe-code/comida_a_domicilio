@@ -1,7 +1,7 @@
 import axios from "axios";
 import { DriverData, DriverResponse } from "../types/driver.type";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/drivers";
 
 export const getDrivers = async (): Promise<DriverResponse[]> => {
   const res = await axios.get<DriverResponse[]>(`${API_URL}/drivers`);

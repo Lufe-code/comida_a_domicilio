@@ -10,7 +10,8 @@ fetch("/api/endpoint", {
   // ...other fetch options
 });
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/address";
+// const API_URL = "http://localhost:5000/address";
 
 export const getAddresses = async (): Promise<AddressResponse[]> => {
   const res = await axios.get<AddressResponse[]>(`${API_URL}/addresses`);
